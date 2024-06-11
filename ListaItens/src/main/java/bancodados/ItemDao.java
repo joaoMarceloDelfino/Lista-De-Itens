@@ -1,4 +1,4 @@
-package models;
+package bancodados;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+
+import models.Item;
 
 public class ItemDao {
 	SessionFactory fabrica = new Configuration().configure().buildSessionFactory();

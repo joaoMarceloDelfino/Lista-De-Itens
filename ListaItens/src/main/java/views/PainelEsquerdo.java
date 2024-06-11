@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import presentations.PaineisPresentation;
+import controladores.PaineisControlador;
 
 public class PainelEsquerdo extends JPanel {
 	JTextField nome = new JTextField();
@@ -30,8 +30,7 @@ public class PainelEsquerdo extends JPanel {
 	JPanel panelDescricao = new JPanel();
 	Font arial = new Font("Arial", Font.PLAIN, 40);
 	JButton enviar = new JButton();
-	PaineisPresentation painelPresentation;
-
+ 
 	/*public PainelEsquerdo( ) {
   	}*/
 
@@ -44,15 +43,7 @@ public class PainelEsquerdo extends JPanel {
 		nome.setBackground(Color.BLUE);
 		nome.setFont(arial);
 		nome.setHorizontalAlignment(JTextField.CENTER);
-		nome.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-					if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-						painelPresentation.enterClicado(nome);
-					}
- 			}
-		});
-
+		 
 		panelNome.setLayout(new BorderLayout());
 		panelNome.add(nomeLabel, BorderLayout.NORTH);
 		panelNome.add(nome, BorderLayout.CENTER);
@@ -61,17 +52,7 @@ public class PainelEsquerdo extends JPanel {
 		quantidade.setBackground(Color.RED);
 		quantidade.setFont(arial);
 		quantidade.setHorizontalAlignment(JTextField.CENTER);
-		quantidade.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				painelPresentation.apenasNumeros(e, "0123456789.");
-			}
-
-			public void keyPressed(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-					painelPresentation.enterClicado(quantidade);
-				}
-			}
-		});
+		 
 
 		panelQuantidade.setLayout(new BorderLayout());
 		panelQuantidade.add(quantidadeLabel, BorderLayout.NORTH);
@@ -80,15 +61,7 @@ public class PainelEsquerdo extends JPanel {
 		// config descricao
 		descricao.setFont(arial);
 		descricao.setHorizontalAlignment(JTextField.CENTER);
-		descricao.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-				painelPresentation.enviar();
-				limparCaixasDeTexto();
-				}
-			}
-		});
+		 
 
 		panelDescricao.setLayout(new BorderLayout());
 		panelDescricao.add(descricaoLabel, BorderLayout.NORTH);
@@ -98,15 +71,7 @@ public class PainelEsquerdo extends JPanel {
 		// config botao enviar
 		enviar.setAlignmentX(Component.LEFT_ALIGNMENT);
 		enviar.setText("Enviar");
-		enviar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				painelPresentation.enviar();
-				limparCaixasDeTexto();
-			}
-		});
-
+		 
 		// adicionando os elementos
 		add(panelNome);
 		add(panelQuantidade);
@@ -114,11 +79,21 @@ public class PainelEsquerdo extends JPanel {
 		//System.out.println(painelPresentation.pegarTodosNomes()); 
 
 	}
- public void setPainelPresentation(PaineisPresentation painelPresentation) {
-	 this.painelPresentation=painelPresentation;
- }
  
-	private void limparCaixasDeTexto() {
+ public void addNomekeyListener(KeyAdapter e) {
+	 nome.addKeyListener(e);
+}
+ public void addQuantidadekeyListener(KeyAdapter e) {
+	 quantidade.addKeyListener(e);
+}
+ public void addDescricaokeyListener(KeyAdapter e) {
+	 descricao.addKeyListener(e);
+}
+public void addBotaoActionListener(ActionListener e) {
+	enviar.addActionListener(e);
+}
+ 
+	public void limparCaixasDeTexto() {
 		nome.setText("");
 		quantidade.setText("");
 		descricao.setText("");
@@ -135,6 +110,15 @@ public class PainelEsquerdo extends JPanel {
 
 	public String getDescricaoText() {
 		return descricao.getText();
+	}
+	public JTextField getNome() {
+		return nome;
+	}
+	public JTextField getQuantidade() {
+		return quantidade;
+	}
+	public JTextField getDescricao() {
+		return descricao;
 	}
 	
 

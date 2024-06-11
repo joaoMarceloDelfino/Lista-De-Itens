@@ -6,7 +6,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import presentations.PaineisPresentation;
+import controladores.PaineisControlador;
 
  
   
@@ -16,13 +16,12 @@ public class Tela extends JFrame{
  
 	PainelDireito painelDireito=new PainelDireito();
  	PainelEsquerdo painelEsquerdo= new PainelEsquerdo();
-	PaineisPresentation painelPresentation=new PaineisPresentation(painelEsquerdo,painelDireito);
+	PaineisControlador painelControlador;
  	 
 public Tela(){
- 	painelEsquerdo.setPainelPresentation(painelPresentation);
- 	painelDireito.setPainelPresentation(painelPresentation);
  	painelEsquerdo.inicializar();
  	painelDireito.inicializar();
+ 	painelControlador=new PaineisControlador(painelEsquerdo,painelDireito);
  	setTitle("Lista de itens");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setLayout(new GridBagLayout());
