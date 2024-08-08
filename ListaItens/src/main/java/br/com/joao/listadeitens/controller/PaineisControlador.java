@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import javax.swing.JTextField;
 
-import bancodados.ItemDao;
+import br.com.joao.listadeitens.bancodados.ItemDao;
 import br.com.joao.listadeitens.model.Item;
 import br.com.joao.listadeitens.model.PainelDireitoModel;
 import br.com.joao.listadeitens.view.PainelDireito;

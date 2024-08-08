@@ -1,4 +1,4 @@
-package bancodados;
+package br.com.joao.listadeitens.bancodados;
 
 import java.util.ArrayList;
 import java.util.List;
