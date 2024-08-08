@@ -1,4 +1,4 @@
-package models;
+package br.com.joao.listadeitens.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

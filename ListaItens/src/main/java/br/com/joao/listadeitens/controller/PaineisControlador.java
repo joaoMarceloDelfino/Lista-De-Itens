@@ -1,4 +1,4 @@
-package controladores;
+package br.com.joao.listadeitens.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +11,10 @@ import java.util.stream.Stream;
 import javax.swing.JTextField;
 
 import bancodados.ItemDao;
-import models.Item;
-import models.PainelDireitoModel;
-import views.PainelDireito;
-import views.PainelEsquerdo;
+import br.com.joao.listadeitens.model.Item;
+import br.com.joao.listadeitens.model.PainelDireitoModel;
+import br.com.joao.listadeitens.view.PainelDireito;
+import br.com.joao.listadeitens.view.PainelEsquerdo;
 
 public class PaineisControlador {
 	PainelEsquerdo painelEsquerdo;

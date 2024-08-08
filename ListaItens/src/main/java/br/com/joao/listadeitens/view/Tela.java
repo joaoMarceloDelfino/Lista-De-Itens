@@ -1,4 +1,4 @@
-package views;
+package br.com.joao.listadeitens.view;
 
  import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -6,7 +6,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import controladores.PaineisControlador;
+import br.com.joao.listadeitens.controller.PaineisControlador;
 
  
   

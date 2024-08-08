@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import models.Item;
+import br.com.joao.listadeitens.model.Item;
 
 public class ItemDao {
 	SessionFactory fabrica = new Configuration().configure().buildSessionFactory();

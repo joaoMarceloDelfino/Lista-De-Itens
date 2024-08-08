@@ -1,4 +1,4 @@
-package views;
+package br.com.joao.listadeitens.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controladores.PaineisControlador;
+import br.com.joao.listadeitens.controller.PaineisControlador;
 
 public class PainelEsquerdo extends JPanel {
 	JTextField nome = new JTextField();
@@ -30,9 +30,6 @@ public class PainelEsquerdo extends JPanel {
 	JPanel panelDescricao = new JPanel();
 	Font arial = new Font("Arial", Font.PLAIN, 40);
 	JButton enviar = new JButton();
- 
-	/*public PainelEsquerdo( ) {
-  	}*/
 
 	public void inicializar() {
 		// config instancia
@@ -43,7 +40,7 @@ public class PainelEsquerdo extends JPanel {
 		nome.setBackground(Color.BLUE);
 		nome.setFont(arial);
 		nome.setHorizontalAlignment(JTextField.CENTER);
-		 
+
 		panelNome.setLayout(new BorderLayout());
 		panelNome.add(nomeLabel, BorderLayout.NORTH);
 		panelNome.add(nome, BorderLayout.CENTER);
@@ -52,7 +49,6 @@ public class PainelEsquerdo extends JPanel {
 		quantidade.setBackground(Color.RED);
 		quantidade.setFont(arial);
 		quantidade.setHorizontalAlignment(JTextField.CENTER);
-		 
 
 		panelQuantidade.setLayout(new BorderLayout());
 		panelQuantidade.add(quantidadeLabel, BorderLayout.NORTH);
@@ -61,7 +57,6 @@ public class PainelEsquerdo extends JPanel {
 		// config descricao
 		descricao.setFont(arial);
 		descricao.setHorizontalAlignment(JTextField.CENTER);
-		 
 
 		panelDescricao.setLayout(new BorderLayout());
 		panelDescricao.add(descricaoLabel, BorderLayout.NORTH);
@@ -71,28 +66,31 @@ public class PainelEsquerdo extends JPanel {
 		// config botao enviar
 		enviar.setAlignmentX(Component.LEFT_ALIGNMENT);
 		enviar.setText("Enviar");
-		 
+
 		// adicionando os elementos
 		add(panelNome);
 		add(panelQuantidade);
 		add(panelDescricao);
-		//System.out.println(painelPresentation.pegarTodosNomes()); 
+		// System.out.println(painelPresentation.pegarTodosNomes());
 
 	}
- 
- public void addNomekeyListener(KeyAdapter e) {
-	 nome.addKeyListener(e);
-}
- public void addQuantidadekeyListener(KeyAdapter e) {
-	 quantidade.addKeyListener(e);
-}
- public void addDescricaokeyListener(KeyAdapter e) {
-	 descricao.addKeyListener(e);
-}
-public void addBotaoActionListener(ActionListener e) {
-	enviar.addActionListener(e);
-}
- 
+
+	public void addNomekeyListener(KeyAdapter e) {
+		nome.addKeyListener(e);
+	}
+
+	public void addQuantidadekeyListener(KeyAdapter e) {
+		quantidade.addKeyListener(e);
+	}
+
+	public void addDescricaokeyListener(KeyAdapter e) {
+		descricao.addKeyListener(e);
+	}
+
+	public void addBotaoActionListener(ActionListener e) {
+		enviar.addActionListener(e);
+	}
+
 	public void limparCaixasDeTexto() {
 		nome.setText("");
 		quantidade.setText("");
@@ -104,22 +102,24 @@ public void addBotaoActionListener(ActionListener e) {
 		return nome.getText();
 	}
 
-	public double getQuantidadeText() {	
+	public double getQuantidadeText() {
 		return Double.parseDouble(quantidade.getText());
 	}
 
 	public String getDescricaoText() {
 		return descricao.getText();
 	}
+
 	public JTextField getNome() {
 		return nome;
 	}
+
 	public JTextField getQuantidade() {
 		return quantidade;
 	}
+
 	public JTextField getDescricao() {
 		return descricao;
 	}
-	
 
 }

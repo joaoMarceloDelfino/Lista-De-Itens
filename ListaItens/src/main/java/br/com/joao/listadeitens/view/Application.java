@@ -1,6 +1,4 @@
-package br.com.joao.listaitens.maven;
-
-import views.Tela;
+package br.com.joao.listadeitens.view;
 
 public class Application
 {

@@ -1,4 +1,4 @@
-package models;
+package br.com.joao.listadeitens.model;
 
  
  import java.util.Vector;
